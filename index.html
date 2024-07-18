@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메가스터디북스</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset .css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 구글 폰트  -->
+    <link rel="preconnect" href="https//fonts.googleapis.com">
+    <link rel="preconnect" href="https//fonts.gstatic.com" crossorigin>
+    <link href="https//fonts.googleapis.com/css2?family=Noto+Sans+KRwght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 메인메뉴 버튼 색상 변경
+            $("main div.pick ul.tag li:first-child a").addClass("current");
+            $("main div.pick ul.tag li:not(:first-child) a").removeClass("current");
+            $("main div.pick ul.tag li:first-child a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:first-child a").not(this).removeClass("current");
+                return false;
+            });
+            $("main div.pick ul.tag li:nth-child(2) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(2) a").not(this).removeClass("current");
+            });
+            $("main div.pick ul.tag li:nth-child(3) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(3) a").not(this).removeClass("current");
+            });
+            $("main div.pick ul.tag li:nth-child(4) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(4) a").not(this).removeClass("current");
+            });
+            $("main div.pick ul.tag li:nth-child(5) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(5) a").not(this).removeClass("current");
+            });
+            $("main div.pick ul.tag li:nth-child(6) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(6) a").not(this).removeClass("current");
+            });
+            $("main div.pick ul.tag li:nth-child(7) a").click(function(){
+                $(this).addClass("current");
+                $("main div.pick ul.tag li:nth-child(7) a").not(this).removeClass("current");
+            });
+        });
+    </script>
+    <!-- 슬릭 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // 상단 타이틀 영역 slick
+        $(document).ready(function(){
+            $('.titleAni').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                dots: false,
+                infinite: true,
+                speed: 900,
+                cssEase: 'ease-in',
+                arrows:true,
+                fade:false,
+                centerMode: true,
+                variableWidth: true
+            });
+        });
+    </script>
+    <script>
+        // div.pick 상단 ul.tag영역 slick
+        $(document).ready(function(){
+            $('.mainbutton').slick({
+                slidesToShow: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                infinite: false,
+                speed: 600,
+                cssEase: 'ease-in',
+                arrows:true,
+                fade:false,
+                variableWidth:true
+            });
+        });
+    </script>
+    <script>
+        // div.mainTitle영역 slick
+        $(document).ready(function(){
+            $('.mainT').slick({
+                slidesToShow: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                dots: true,
+                infinite: false,
+                speed: 600,
+                arrows:true,
+                variableWidth: true
+            });
+        });
+    </script>
+    <script>
+        // event영역 slick
+        $(document).ready(function(){
+            $('.eventAni').slick({
+                slidesToShow: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                dots: false,
+                infinite: false,
+                speed: 600,
+                arrows:true,
+                variableWidth: true
+            });
+        });
+    </script>
+    <script>
+        // best영역 slick
+        $(document).ready(function(){
+            $('.bestAni').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                dots: false,
+                infinite: false,
+                speed: 500,
+                arrows:true,
+                fade:false,
+                variableWidth: true
+            });
+        });
+    </script>
+    <script>
+        // ul.tag button wrap
+        $(document).ready(function(){
+            $("main div.pick ul.tag button").wrapAll("<div class='mbutton'></div>");
+        });
+    </script>
+    <script>
+        // div.event button wrap
+        $(document).ready(function(){
+            $("div.event button").wrapAll("<div class='Ebutton'></div>");
+        });
+    </script>
+    <script>
+        // ul.tag button wrap
+        $(document).ready(function(){
+            $("main div.pick div.mainTitle button.slick-arrow").wrapAll("<div class='Pbutton'></div>");
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단영역 -->
+     <header>
+        <div class="head">
+            <div class="topmenu wrap flex">
+                <input type="text" placeholder="검색어 입력">
+                <a href="" class="searchB block">검색버튼</a>
+                <a href="" class="login block">로그인버튼</a>
+            </div>
+        </div>
+            <div class="sceondmenu wrap flex">
+                <nav class="grid">
+                    <h1 class=""><a href="" class="block">메가스터디북스</a></h1>
+                    <ul class="gnb flex h4 bold">
+                        <li><a href="" class="block">초등</a></li>
+                        <li><a href="" class="block">중등</a></li>
+                        <li><a href="" class="block">고등</a></li>
+                        <li><a href="" class="block">단행본</a></li>
+                    </ul>   
+                    <a href="" class="ham block">전체메뉴</a>
+                </nav>
+            </div>
+     </header>
+     <!-- 타이틀영역 -->
+      <section id="title">
+            <div class="titleAni">
+                <div class="t1">
+                    <div class="wrap main1">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">중·고등</small>
+                            <h2 class="h2 bold">
+                                수학이 쉬워지는<br>
+                                완벽한 솔루션, 완쏠
+                            </h2>
+                            <p class="p">
+                                22개정 교육과정<br>
+                                중고등 수학개념·유형 입문서
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title1.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t2">
+                    <div class="wrap main2">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">초등</small>
+                            <h2 class="h2 bold">
+                                엠베스트 과학 대표<br>
+                                장풍쌤의 첫 학습 만화
+                            </h2>
+                            <p class="p">
+                                『장풍쌤의 과학 풍딱지』
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title2.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t3">
+                    <div class="wrap main3">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">고등</small>
+                            <h2 class="h2 bold">
+                                수능 고득점을 위한<br>
+                                강력한 한 방!
+                            </h2>
+                            <p class="p">
+                                레전드 수능 문제집<br>
+                                <메가스터디 N제>
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title3.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t4">
+                    <div class="wrap main4">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">초등</small>
+                            <h2 class="h2 bold">
+                                초등영문법<br>
+                                문장의원리
+                            </h2>
+                            <p class="p">
+                                문장의 원리를 깨우치는 진짜 영문법<br>
+                                29일 실력 완성
+                            </p>
+                            <figure>
+                            <img src="../my-pf3/img/title4.png" alt="책사진">
+                            <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t5">
+                    <div class="wrap main5">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">고등</small>
+                            <h2 class="h2 bold">
+                                내신·수능 1등급<br>
+                                실전 대비서
+                            </h2>
+                            <p class="p">
+                                2025 수능 국어 1등급 필수 코스<br>
+                                <메가스터디 실정 N제>
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title2.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t6">
+                    <div class="wrap main6">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">초등</small>
+                            <h2 class="h2 bold">
+                                초등 공부 시작부터 끝까지<br>
+                                초끝
+                            </h2>
+                            <p class="p">
+                                『스스로 시계+달력+계획표』<br>
+                                『저절로 구구단』 출간
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title2.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="t7">
+                    <div class="wrap main7">
+                        <a href="" class="grid">
+                            <small class="Stitle bold h5">고등</small>
+                            <h2 class="h2 bold">
+                                2025 수능 연계<br>
+                                문학 작품 완벽 분석
+                            </h2>
+                            <p class="p">
+                                2025 수능 국어 1등급 필수 코스<br>
+                                <메가스터디 분석노트>
+                            </p>
+                            <figure>
+                                <img src="../my-pf3/img/title2.png" alt="책사진">
+                                <figcaption class="hide">책사진</figcaption>
+                            </figure>
+                            <small class="Stitle2">View more</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <div class="wrap Qmenu">
+            <h2 class="hide">타이틀 하단버튼</h2>
+            <ul class="list flex">
+                <li><a href="" class="block bold">정답 및 해설</a></li>
+                <li><a href="" class="block bold">정오표</a></li>
+                <li><a href="" class="block bold">듣기자료</a></li>
+                <li><a href="" class="block bold">교사용 자료</a></li>
+                <li><a href="" class="block bold">총판 안내</a></li>
+                <li><a href="" class="block bold">FAQ</a></li>
+            </ul>
+        </div>
+      </section>
+      <!-- 메인영역 -->
+       <main>
+            <div class="wrap paddingT100 pick">
+                <h2 class="h2 bold">메가 PICK</h2>
+                <ul class="tag mainbutton">
+                    <li><a href="" class="block current">#초등공부시작부터끝까지</a></li>
+                    <li><a href="" class="block current">#일타강사Pick</a></li>
+                    <li><a href="" class="block current">#탄탄한초등기본기</a></li>
+                    <li><a href="" class="block current">#학원쌤의선택</a></li>
+                    <li><a href="" class="block current">#중등내신대비</a></li>
+                    <li><a href="" class="block current">#수능영역은ALLTIME조정식</a></li>
+                    <li><a href="" class="block current">#서울대선배들의공부법</a></li>
+                </ul>
+                <div class="mainTitle mainT">
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 저절로 구구단</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 스스로 시계+달력+계획표</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 문장 학습+글쓰기 1단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 맞춤법+어휘+독해 1단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 문장 학습+글쓰기 2단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h3 bold">초끝 맞춤법+어휘+독해 2단계</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hover">
+                        <ul>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 저절로 구구단</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 스스로 시계+달력+계획표</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 문장 학습+글쓰기 1단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 맞춤법+어휘+독해 1단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 문장 학습+글쓰기 2단계</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="block">
+                                    <h3 class="h4 bold">초끝 맞춤법+어휘+독해 2단계</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 베너 광고 -->
+            <div class="wrap paddingT100 paddingB100 test">
+                <a href="" class="grid">
+                    <h2 class="h2">우리 아이의 문해력은 몇 점? 
+                        <strong>초등 문해력 진단 테스트</strong>
+                    </h2>
+                    <p class="h4">지금 바로 진단 테스트를 시작해 보세요.</p>
+                    <h3 class="h4">테스트 시작</h3>
+                </a>
+            </div> 
+            <!-- best -->
+            <div class="wrap paddingT100 paddingB100 best">
+                <h2 class="h2 bold">베스트 셀러</h2>
+                <h3 class="h4 bold">초등</h3>
+                <ul class="bestAni">
+                    <li>
+                        <a href="" class="block">
+                            <p>큰별쌤 최태성의 스토리 한국사 사전</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>장풍쌤의 과학 풍딱지 1전기 : 의문의 ...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>이서윤쌤의 초등한자어휘 일력</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>초등영문법 문장의 원리 Level 1</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>뭔말 국어 용어 200 2권</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>뭔말 과학 용어 200 2권</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>스도쿠로 익히는 초등 필수 고사성어 100</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>1일 1독해 우리고전 50 2권 교과서 고...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>1일 1독해 세상을 바꾼 인물 100 1권 문...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>용돈 잘 쓰는 법</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p>이서운쌤의 초등 한자 어휘 끝내기 1단계</p>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="wrap paddingT100 paddingB50 youtube">
+                <h2 class="h2 bold">메가스터디북스 유튜브</h2>
+                <ul class="mainT">
+                    <li><a href="" class="block">미술관에 가고 싶어졌습니다.</a></li>
+                    <li><a href="" class="block">초등문법 공부가이드</a></li>
+                    <li><a href="" class="block">학년이 올라갈수록 공부 잘 하는 아이들</a></li>
+                    <li><a href="" class="block">영어 기출서 고르는 기준</a></li>
+                    <li><a href="" class="block">초등공부 쉽게 갑니다!</a></li>
+                </ul>
+            </div> 
+            <div class="wrap paddingT100 paddingB100 grid event">
+                <h2 class="h2 bold">이벤트</h2>
+                <a href="" class="block bold view">View more</a>
+                <ul class="eventAni">
+                    <li>
+                        <a href="" class="block text">
+                            <h3 class="h5 bold">sns팔로우이벤트</h3>
+                        </a>
+                        <a href="" class="block content">
+                            <p class="h3 bold">메가스터디북스 인스타 팔로우 이벤트</p>
+                            <p class="h4 time">2024.07.10 ~ 2024.0718</p>
+                            <figure>
+                                <img src="../my-pf3/img/event1.jpg" alt="인스타그램">
+                                <figcaptiion class="hide"></figcaptiion>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block text">
+                            <h3 class="h5 bold">기획전</h3>
+                        </a>
+                        <a href="" class="block content">
+                            <p class="h3 bold">믿고 보는 메가스터디 선생님 시리즈</p>
+                            <figure>
+                                <img src="../my-pf3/img/event2.png" alt="기획전">
+                                <figcaptiion class="hide">시리즈</figcaptiion>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block text">
+                            <h3 class="h5 bold">이벤트</h3>
+                        </a>
+                        <a href="" class="block content">
+                            <p class="h3 bold"><초끝> 출간 기념! 받아쓰기 노트 증정</p>
+                            <figure>
+                                <img src="../my-pf3/img/event3.png" alt="이밴트">
+                                <figcaptiion class="hide">노트</figcaptiion>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block text">
+                            <h3 class="h5 bold">굿즈</h3>
+                        </a>
+                        <a href="" class="block content">
+                            <p class="h3 bold">완쏠 디지털 굿즈 무료 배포</p>
+                            <figure>
+                                <img src="../my-pf3/img/event4.jpg" alt="굿즈">
+                                <figcaptiion class="hide">굿즈</figcaptiion>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wrap paddingB100 notice">
+                <h2 class="h2 bold">Notice</h2>
+                <ul class="flex">
+                    <li>
+                        <a href="" class="block">
+                            <p class="p bold">홈페이지 개인정보처리방침 안내</p>
+                            <p class="time">2023-11-24</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p class="p bold">홈페이지 이용약관 안내</p>
+                            <p class="time">2023-11-24</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block">
+                            <p class="p bold">메가스터디북스 홈페이지 리뉴얼 오픈 안내</p>
+                            <p class="time">2023-11-13</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wrap paddingB100 com">
+                <h2 class="h2 bold">Commuity</h2>
+                <ul class="sns flex">
+                    <li><a href="" class="block bold"><i class="">아이콘</i>메가스터디북스</a></li>
+                    <li><a href="" class="block bold"><i class="">아이콘</i>메가맘</a></li>
+                    <li><a href="" class="block bold"><i class="">아이콘</i>메가책방</a></li>
+                    <li><a href="" class="block bold"><i class="">아이콘</i>메가스터디북스</a></li>
+                    <li><a href="" class="block bold"><i class="">아이콘</i>메가맘</a></li>
+                </ul>
+            </div>               
+       </main>
+       <!-- 하단영역 -->
+        <footer>
+            <div class="grid">
+                <div class="a grid">
+                    <h2 class="hide"></h2>
+                    <ul class="fnb flex">
+                        <li><a href="" class="block">회사소개</a></li>
+                        <li><a href="" class="block">이용약관</a></li>
+                        <li><a href="" class="block">개인정보처리방침</a></li>
+                        <li><a href="" class="block">고객센터</a></li>
+                        <li><a href="" class="block">제휴 문의</a></li>
+                        <li><a href="" class="block">투고 문의</a></li>
+                        <li><a href="" class="block">사이트맵</a></li>
+                    </ul>
+                    <ul class="sns flex">
+                        <li><a href="" class="block">인스타</a></li>
+                        <li><a href="" class="block">인스타</a></li>
+                        <li><a href="" class="block">인스타</a></li>
+                        <li><a href="" class="block">유튜브</a></li>
+                        <li><a href="" class="block">네이버</a></li>
+                    </ul>
+                    <button>Family site</button>
+                </div>
+                <div class="b grid">
+                    <a href="" class="block">
+                        <figure>
+                            <img src="img/logo.svg" alt="로고사진">
+                            <figcaption class="hide"></figcaption>
+                        </figure>
+                    </a>
+                    <address> 메가스터디(주)  대표자 : 손은진  개인정보관리책임자 : 이상준  사업자등록번호 : 214-86-64631  통신판매업신고번호 : 2020-서울서초-0597 
+                        <span class="block"></span>
+                        서울 서초구 효령로 304(서초동) 국제전자센터 24층 팩스 : 02-6984-6997 고객센터 : 1661-5431 </address>
+                    <p>Copyright ⓒ Megastudy, All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
